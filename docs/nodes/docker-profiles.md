@@ -1,0 +1,54 @@
+---
+icon: fontawesome/brands/docker
+---
+
+# Docker Compose profiles
+
+Required services run without a profile. Optional services are enabled through
+the upstream Compose profiles below.
+
+These profiles follow the current `koinos/koinos` `master` branch. Confirm the
+rendered services locally because the upstream orchestrator can change.
+
+| Profile | Services enabled |
+| --- | --- |
+| `block_producer` | `block_producer` |
+| `jsonrpc` | `jsonrpc` |
+| `grpc` | `grpc` |
+| `rest` | `rest` and its `jsonrpc` dependency |
+| `transaction_store` | `transaction_store` |
+| `contract_meta_store` | `contract_meta_store` |
+| `account_history` | `account_history` |
+| `api` | `jsonrpc`, `grpc`, `rest`, `transaction_store`, `contract_meta_store`, `account_history` |
+| `all` | Every optional service, including `block_producer` |
+
+Required services:
+
+- `amqp`
+- `chain`
+- `mempool`
+- `block_store`
+- `p2p`
+
+## Select the least profile
+
+- Standard node with core services only: leave `COMPOSE_PROFILES` empty.
+- Standard node with private health API: `COMPOSE_PROFILES=jsonrpc`.
+- Full API/index node: `COMPOSE_PROFILES=api`.
+- Individual APIs: use `jsonrpc`, `grpc`, or `rest`.
+- Producer: follow [Block production](block-production.md) and enable
+  `block_producer` intentionally.
+
+Profiles can be set in `.env` or passed with `docker compose --profile`.
+Commands that omit `--profile` still honor `COMPOSE_PROFILES` from `.env`.
+Inspect `.env` before assuming a command starts only required services.
+
+!!! danger "`all` is not a quick-start profile"
+    `all` starts the producer service. It can initialize producer-key state and
+    materially changes the threat model, even when producer configuration is
+    incomplete.
+
+Before changing a profile, inspect the `profiles` and `depends_on` sections in
+the `docker-compose.yml` supplied by the exact deployment revision. Confirm
+the selected services with `docker compose config --services`, then use
+`docker compose ps` after applying the change.

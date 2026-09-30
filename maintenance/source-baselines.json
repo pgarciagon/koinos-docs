@@ -1,0 +1,108 @@
+{
+  "imported_on": "2026-09-30",
+  "documentation_source_commit": "9178aa7f38cd94b7aaf8309ab58bcb8bc5dec362",
+  "integration_commit": "821674672e699bf56e94d7c0e8bce122e83d1482",
+  "protocol_tag": "v2.6.0",
+  "protocol_commit": "f3ba7c54d72ddd7b6898a0e2ab7567dcf60ccd80",
+  "services": [
+    {
+      "service": "account-history",
+      "page": "docs/architecture/microservices/account-history.md",
+      "source_repository": "https://github.com/koinos/koinos-account-history",
+      "source_commit": "1d592c40ddd06c022eab3153266bd428752c6ded",
+      "last_reviewed": null,
+      "review_scope": "Imported source-referenced documentation; no new behavioral audit performed.",
+      "remaining_work": "Expand with the detailed service template and verify claims against the chosen target baseline."
+    },
+    {
+      "service": "block-producer",
+      "page": "docs/architecture/microservices/block-producer.md",
+      "source_repository": "https://github.com/koinos/koinos-block-producer",
+      "source_commit": "8896d7aabbe9e0d154a5f7860920e95d17fd8cb4",
+      "last_reviewed": null,
+      "review_scope": "Imported source-referenced documentation; no new behavioral audit performed.",
+      "remaining_work": "Expand with the detailed service template and verify claims against the chosen target baseline."
+    },
+    {
+      "service": "block-store",
+      "page": "docs/architecture/microservices/block-store.md",
+      "source_repository": "https://github.com/koinos/koinos-block-store",
+      "source_commit": "2bb94558df61c71eb241002635444cdddce0843c",
+      "last_reviewed": null,
+      "review_scope": "Imported source-referenced documentation; no new behavioral audit performed.",
+      "remaining_work": "Expand with the detailed service template and verify claims against the chosen target baseline."
+    },
+    {
+      "service": "contract-meta-store",
+      "page": "docs/architecture/microservices/contract-meta-store.md",
+      "source_repository": "https://github.com/koinos/koinos-contract-meta-store",
+      "source_commit": "64e803e1db1a9bb2946ae379ddad0e5611442ec5",
+      "last_reviewed": null,
+      "review_scope": "Imported source-referenced documentation; no new behavioral audit performed.",
+      "remaining_work": "Expand with the detailed service template and verify claims against the chosen target baseline."
+    },
+    {
+      "service": "grpc",
+      "page": "docs/architecture/microservices/grpc.md",
+      "source_repository": "https://github.com/koinos/koinos-grpc",
+      "source_commit": "3a94c34fa002552ef586cd1af9bfd34d175430d3",
+      "last_reviewed": null,
+      "review_scope": "Imported source-referenced documentation; no new behavioral audit performed.",
+      "remaining_work": "Expand with the detailed service template and verify claims against the chosen target baseline."
+    },
+    {
+      "service": "json-rpc",
+      "page": "docs/architecture/microservices/json-rpc.md",
+      "source_repository": "https://github.com/koinos/koinos-jsonrpc",
+      "source_commit": "2c9433c67f2f60c920525a6c4bd3e15b0b51d94a",
+      "last_reviewed": null,
+      "review_scope": "Imported source-referenced documentation; no new behavioral audit performed.",
+      "remaining_work": "Expand with the detailed service template and verify claims against the chosen target baseline."
+    },
+    {
+      "service": "koinos-chain",
+      "page": "docs/architecture/microservices/koinos-chain.md",
+      "source_repository": "https://github.com/koinos/koinos-chain",
+      "source_commit": "0ae99eced8b585c4145424e9c2a28f667796cc66",
+      "last_reviewed": null,
+      "review_scope": "Imported source-referenced documentation; no new behavioral audit performed.",
+      "remaining_work": "Expand with the detailed service template and verify claims against the chosen target baseline."
+    },
+    {
+      "service": "mempool",
+      "page": "docs/architecture/microservices/mempool.md",
+      "source_repository": "https://github.com/koinos/koinos-mempool",
+      "source_commit": "3f2a276e4b3e4fa37c69031b2f6f707915644086",
+      "last_reviewed": null,
+      "review_scope": "Imported source-referenced documentation; no new behavioral audit performed.",
+      "remaining_work": "Expand with the detailed service template and verify claims against the chosen target baseline."
+    },
+    {
+      "service": "p2p",
+      "page": "docs/architecture/microservices/p2p.md",
+      "source_repository": "https://github.com/koinos/koinos-p2p",
+      "source_commit": "e2267ba230960b5e4100c16ad84c42cfc12eec4b",
+      "last_reviewed": null,
+      "review_scope": "Imported source-referenced documentation; no new behavioral audit performed.",
+      "remaining_work": "Expand with the detailed service template and verify claims against the chosen target baseline."
+    },
+    {
+      "service": "rest",
+      "page": "docs/architecture/microservices/rest.md",
+      "source_repository": "https://github.com/koinos/koinos-rest",
+      "source_commit": "d7f5bc90f11f78af9167e64913a028c00036d134",
+      "last_reviewed": null,
+      "review_scope": "Imported source-referenced documentation; no new behavioral audit performed.",
+      "remaining_work": "Expand with the detailed service template and verify claims against the chosen target baseline."
+    },
+    {
+      "service": "transaction-store",
+      "page": "docs/architecture/microservices/transaction-store.md",
+      "source_repository": "https://github.com/koinos/koinos-transaction-store",
+      "source_commit": "c8d985ab1b0dd3862fd2d0099f4458ebc6e0920c",
+      "last_reviewed": null,
+      "review_scope": "Imported source-referenced documentation; no new behavioral audit performed.",
+      "remaining_work": "Expand with the detailed service template and verify claims against the chosen target baseline."
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+site_name: Koinos Documentation — Community Edition
+
+site_description: Build a decentralized future with The World's First Feeless Smart Contract Platform. From running validators to smart contract development, Koinos Documentation has you covered.
+
+repo_name: pgarciagon/koinos-docs
+repo_url: https://github.com/pgarciagon/koinos-docs
+
+edit_uri: edit/main/docs/
+
+copyright: Copyright 2023-2024 Koinos Group
+
+docs_dir: docs
+extra_css:
+  - stylesheets/extra.css
+
+theme:
+  name: material
+  language: en
+  font:
+    text: Plus Jakarta Sans
+  palette:
+    - media: "(prefers-color-scheme)"
+      primary: black
+      scheme: slate
+      toggle:
+        icon: material/link
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: black
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: black
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  icon:
+    edit: material/pencil
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.prune
+    - navigation.sections
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  favicon: assets/favicon.png
+  logo: assets/koinos-logo-white.png
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/koinos
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/koinos/
+    - icon: fontawesome/brands/discord
+      link: https://discord.koinos.io
+    - icon: fontawesome/brands/telegram
+      link: https://telegram.koinos.io/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/koinosnetwork
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@koinosgroup
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets:
+      base_path:
+        - .
+      check_paths: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+plugins:
+  - swagger-ui-tag
+  - search
+
+nav:
+  - Home: index.md
+  - Documentation maintenance: maintenance.md
+  - Getting Started:
+      - getting-started/index.md
+      - getting-started/what-is-koinos.md
+      - getting-started/accounts-keys-wallets.md
+      - Wallets:
+          - getting-started/kondor-wallet.md
+          - getting-started/cli-wallet.md
+      - getting-started/mainnet-vs-testnet.md
+      - getting-started/tooling-overview.md
+  # - Overview:
+  #   - overview/index.md
+  #   - overview/blockchain-basics.md
+  #   - overview/governance.md
+  #   - overview/mana.md
+  #   - overview/proof-of-burn.md
+  #   - overview/smart-contracts.md
+  #   - overview/tokenomics.md
+  - Interacting with Koinos:
+      - interacting/index.md
+      - interacting/quick-start.md
+      - interacting/read-contract-data.md
+      - interacting/submit-transaction.md
+      - interacting/multiple-operations.md
+      - interacting/testnet.md
+      - interacting/rest-api.md
+      - interacting/kondor-wallet.md
+      - Common Tasks:
+          - exchanges/index.md
+          - exchanges/head-block.md
+          - exchanges/create-wallet.md
+          - exchanges/account-balance.md
+          - exchanges/transfer.md
+          - exchanges/mana.md
+          - exchanges/offline-signing.md
+          - exchanges/multisig.md
+          - exchanges/finality.md
+          - exchanges/account-history.md
+          - exchanges/cli.md
+          - exchanges/koilib.md
+          - exchanges/rest.md
+      - Tutorials:
+          - interacting/tutorials/frontend-guide.md
+  - Smart Contract Development:
+      - contracts/index.md
+      - contracts/quick-start.md
+      - contracts/storage.md
+      - contracts/external-functions.md
+      - contracts/protobuffers.md
+      - contracts/call-other-contracts.md
+      - contracts/check-authorization.md
+      - contracts/authorize-function.md
+      - contracts/verify-signatures.md
+      - contracts/system-events.md
+      - contracts/logs.md
+      - contracts/build-testnet.md
+      - contracts/deploy-contract.md
+      - contracts/examples.md
+      - Tutorials:
+          - contracts/tutorials/contract-guide.md
+  # - Developers:
+  #   - developers/index.md
+  #   - developers/as-sdk.md
+  #   - developers/authority.md
+  #   - developers/cli.md
+  #   - developers/deploy-contract.md
+  #   - developers/payer-payee.md
+  #   - developers/protobuf.md
+  #   - developers/rc-limits.md
+  #   - developers/resource-management.md
+  #   - developers/rest.md
+  #   - developers/testnet.md
+  #   - developers/transactions.md
+  #   - Guides:
+  #     - developers/guides/calculator.md
+  #     - developers/guides/token.md
+  - Node Operators:
+      - Overview: nodes/index.md
+      - Requirements: nodes/requirements.md
+      - Quick Start: nodes/running-node.md
+      - Advanced Setup and Verification: nodes/running-node-advanced.md
+      - Run a Public Seed Node: nodes/seed-node.md
+      - Networks: nodes/networks.md
+      - Docker Compose Profiles: nodes/docker-profiles.md
+      - Microservices: nodes/microservices.md
+      - Run a Public API Node: nodes/rpc-node.md
+      - Block Production: nodes/block-production.md
+      - Configuration: nodes/configuration.md
+      - Security: nodes/security.md
+      - Operations: nodes/management.md
+      - Backup and restore: nodes/backup-restore.md
+  - Architecture:
+      - architecture/index.md
+      - Microservices:
+          - Microservices overview: architecture/microservices.md
+          - Internal messaging: architecture/interprocess-communication.md
+          - Services:
+              - Chain: architecture/microservices/koinos-chain.md
+              - Block Store: architecture/microservices/block-store.md
+              - P2P: architecture/microservices/p2p.md
+              - Mempool: architecture/microservices/mempool.md
+              - Transaction Store: architecture/microservices/transaction-store.md
+              - Block Producer: architecture/microservices/block-producer.md
+              - JSON-RPC: architecture/microservices/json-rpc.md
+              - gRPC: architecture/microservices/grpc.md
+              - REST: architecture/microservices/rest.md
+              - Contract Meta Store: architecture/microservices/contract-meta-store.md
+              - Account History: architecture/microservices/account-history.md
+      - Smart contract execution:
+          - Smart contracts: architecture/smart-contracts.md
+          - Contract ABI: architecture/contract-abi.md
+          - System calls: architecture/system-calls.md
+          - Serialization: architecture/serialization.md
+      - Resource model:
+          - Overview: architecture/resources.md
+          - Resource market mathematics: architecture/resource-market-mathematics.md
+      - Proof of Burn: architecture/proof-of-burn.md
+  - System Contracts:
+      - system-contracts/index.md
+      - system-contracts/tokenomics.md
+      - system-contracts/koin-vhp.md
+      - system-contracts/proof-of-burn.md
+      - system-contracts/mana.md
+      - system-contracts/governance.md
+      - system-contracts/name-service.md
+      - system-contracts/resources.md
+      - system-contracts/koinos-fund.md
+  - Governance Proposals:
+      - governance/index.md
+      - governance/submit-proposal.md
+      - History of Updates:
+          - governance/history/vhp-bug.md
+          - governance/history/system-contract-metadata.md
+          - governance/history/allowances.md
+          - governance/history/koinos-fund.md
+  - References:
+      - references/index.md
+      - Koilib Reference:
+          - references/koilib/contract-class.md
+          - references/koilib/provider-class.md
+          - references/koilib/serializer-class.md
+          - references/koilib/signer-class.md
+          - references/koilib/transaction-class.md
+          - references/koilib/util-functions.md
+      - Assembly Script SDK Reference:
+          - references/as-sdk/system-class.md
+          - references/as-sdk/storage-classes.md
+          - references/as-sdk/encoding-functions.md
+          - references/as-sdk/koinosbox-functions.md
+  - Resources:
+      - Resources overview: resources/index.md
+      - For users:
+          - Wallets: resources/wallets.md
+          - Explorers and network tools: resources/explorers.md
+          - Ecosystem applications and services: resources/ecosystem-platforms.md
+      - For developers:
+          - SDKs, libraries, and developer tools: resources/software-libraries.md
+          - Contract standards: resources/contract-standards.md
+      - Community and learning: resources/community-and-learning.md

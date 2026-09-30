@@ -1,0 +1,94 @@
+# Node Operators
+
+This section covers the official Koinos node composed of microservices and
+distributed by [`koinos/koinos`](https://github.com/koinos/koinos). Choose what
+the node must do before enabling optional services. The standard starting point
+is a node without block production, with private local JSON-RPC for health
+checks.
+
+The initial installation procedure follows the current official
+`koinos/koinos` default branch, which is `master`. It downloads the latest
+Docker Compose orchestrator and the image tags selected there. See
+[Configuration](configuration.md) before installing or upgrading.
+
+## Choose what the node will do
+
+| Purpose | Services | Public exposure | Main risk | Start here |
+| --- | --- | --- | --- | --- |
+| Standard node | Required services; optional private JSON-RPC | P2P `8888/tcp` | Disk growth and synchronization | [Quick Start](running-node.md) or [advanced setup](running-node-advanced.md) |
+| Public Seed Node | Standard node with stable P2P identity and published multiaddr | Stable inbound P2P, normally `8888/tcp` | Availability, identity continuity, and public peer load | [Run a Seed Node](seed-node.md) |
+| Public API node | Standard node plus selected API services | HTTPS through a reverse proxy | Abuse, capacity, and incorrect port exposure | [Run a public API node](rpc-node.md) |
+| Block producer | Standard node plus `block_producer` | P2P; APIs need not be public | Hot key and irreversible PoB actions | [Block production](block-production.md) |
+
+!!! warning "Do not use `all` as a generic quick start"
+    The upstream `all` profile includes `block_producer`. Enable only the
+    profiles required for the selected role.
+
+<div class="grid cards" markdown>
+
+-   :fontawesome-solid-play:{ .lg .middle } __Standard node quick start__
+
+    ---
+
+    Start a basic node in three steps with the current official orchestrator
+    and its default configuration. Continue separately with the production
+    setup and health checks when needed.
+
+    [:octicons-arrow-right-24: Quick Start](running-node.md) ·
+    [Advanced setup](running-node-advanced.md)
+
+-   :fontawesome-solid-file-lines:{ .lg .middle } __Requirements__
+
+    ---
+
+    Plan CPU, RAM, SSD capacity, bandwidth, time synchronization, and disk
+    headroom for the selected services.
+
+    [:octicons-arrow-right-24: Plan capacity](requirements.md)
+
+-   :fontawesome-solid-globe:{ .lg .middle } __Networks__
+
+    ---
+
+    Keep mainnet, the current public testnet, and legacy Harbinger data,
+    identities, keys, and chain IDs separate.
+
+    [:octicons-arrow-right-24: Choose a network](networks.md)
+
+-   :fontawesome-solid-share-nodes:{ .lg .middle } __Public Seed Node__
+
+    ---
+
+    Provide a stable public P2P entry point with a protected identity, public
+    multiaddr, external reachability checks, and continuous monitoring.
+
+    [:octicons-arrow-right-24: Run a Seed Node](seed-node.md)
+
+-   :fontawesome-solid-tower-broadcast:{ .lg .middle } __Public API node__
+
+    ---
+
+    Enable JSON-RPC, REST, and gRPC intentionally, with loopback bindings,
+    clear reverse-proxy requirements, TLS, and external verification.
+
+    [:octicons-arrow-right-24: Publish APIs](rpc-node.md)
+
+-   :fontawesome-solid-lock:{ .lg .middle } __Security__
+
+    ---
+
+    Apply least-service deployment, binding and firewall controls, proxy
+    protections, host hardening, and key separation.
+
+    [:octicons-arrow-right-24: Secure the node](security.md)
+
+-   :fontawesome-solid-list-check:{ .lg .middle } __Operations__
+
+    ---
+
+    Monitor, update, roll back, back up, restore, reindex, resync, and collect
+    useful incident evidence.
+
+    [:octicons-arrow-right-24: Operate the node](management.md)
+
+</div>

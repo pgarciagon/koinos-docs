@@ -1,0 +1,23 @@
+docs-venv
+site
+node_modules
+dist
+
+# Mac files
+.DS_Store
+
+# Python temp files
+*.pyc
+*.pyo
+__pycache__
+
+# Editor cache files
+*~*
+*#*
+
+.vscode/
+
+# Unreviewed source material is local only.
+drafts/
+.venv/
+LOCAL_REFERENCES.md
